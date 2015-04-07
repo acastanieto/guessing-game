@@ -15,7 +15,14 @@ guess = int(raw_input("Your guess? "))
 
 while guess != answer:
     
-    if guess > answer:
+    if guess < 0 or guess > 100:
+
+        print "Your guess is out of bounds, please try again." 
+   
+        guess = int(raw_input("Your next guess?"))
+
+
+    elif guess > answer:
     
         print "Your guess is too high.  Try again."
           
@@ -25,11 +32,11 @@ while guess != answer:
         
         print "Your guess is too low.  Try again."
 
-        guess = int(raw_input("Your next guess?"))  
-   
-    elif guess == answer:
+        guess = int(raw_input("Your next guess?"))
+
+else:
         
-        print "That's the correct guess!  Yay, you win everything!"
+    print "That's the correct guess!  Yay, you win everything!"
         
-        break
+
 
