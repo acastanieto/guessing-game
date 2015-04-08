@@ -11,7 +11,14 @@ answer =  random.randint(1,100)
 
 print "The answer is %d." % answer 
 
-guess = int(raw_input("Your guess? ")) 
+#guess = int(raw_input("Your guess? ")) 
+
+while True:
+    try:
+        guess = int(raw_input("Your guess?" ))
+        break
+    except ValueError:
+        print "Oops! That was no valid number! Try again."
 
 while guess != answer:
     
