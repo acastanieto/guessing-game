@@ -26,20 +26,35 @@ while guess != answer:
 
         print "Your guess is out of bounds, please try again." 
    
-        guess = int(raw_input("Your next guess?"))
+        while True:
+            try:
+                guess = int(raw_input("Your guess?" ))
+                break
+            except ValueError:
+                print "Oops! That was no valid number! Try again."
 
 
     elif guess > answer:
     
         print "Your guess is too high.  Try again."
           
-        guess = int(raw_input("Your next guess?"))  
+        while True:
+            try:
+                guess = int(raw_input("Your guess?" ))
+                break
+            except ValueError:
+                print "Oops! That was no valid number! Try again."  
 
     elif guess < answer:
         
         print "Your guess is too low.  Try again."
 
-        guess = int(raw_input("Your next guess?"))
+        while True:
+            try:
+                guess = int(raw_input("Your guess?" ))
+                break
+            except ValueError:
+                print "Oops! That was no valid number! Try again."
 
 else:
         
