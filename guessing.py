@@ -13,6 +13,8 @@ print "The answer is %d." % answer
 
 #guess = int(raw_input("Your guess? ")) 
 
+play = True
+
 while True:
     try:
         guess = int(raw_input("Your guess?" ))
@@ -20,7 +22,8 @@ while True:
     except ValueError:
         print "Oops! That was no valid number! Try again."
 
-while guess != answer:
+
+while play == True:
     
     if guess < 0 or guess > 100:
 
@@ -56,9 +59,28 @@ while guess != answer:
             except ValueError:
                 print "Oops! That was no valid number! Try again."
 
-else:
-        
-    print "That's the correct guess!  Yay, you win everything!"
+    elif guess == answer:
+                
+        print "That's the correct guess!  Yay, you win everything!"
+        playAgain = raw_input("Do you want to play again?  Type yes or no.")
+        if playAgain != "yes" and playAgain != "no":
+            playAgain = raw_input("Please type yes or no.")
+        elif playAgain == "yes":
+
+            answer =  random.randint(1,100)
+
+            print "The answer is %d." % answer 
+
+            while True:
+                try:
+                    guess = int(raw_input("Ok, let's play again. Your guess?" ))
+                    break
+                except ValueError:
+                    print "Oops! That was no valid number! Try again."
+        else:
+            play = False
+            print "Ok, thanks for playing!"
+
         
 
 
