@@ -22,8 +22,11 @@ while True:
     except ValueError:
         print "Oops! That was no valid number! Try again."
 
+guesscount = 0
 
 while play == True:
+
+    guesscount += 1
     
     if guess < 0 or guess > 100:
 
@@ -62,11 +65,12 @@ while play == True:
     elif guess == answer:
                 
         print "That's the correct guess!  Yay, you win everything!"
+        print "You took %d guesses to win." % guesscount
         playAgain = raw_input("Do you want to play again?  Type yes or no.")
         if playAgain != "yes" and playAgain != "no":
             playAgain = raw_input("Please type yes or no.")
         elif playAgain == "yes":
-
+            guesscount = 0    
             answer =  random.randint(1,100)
 
             print "The answer is %d." % answer 
